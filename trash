@@ -8,8 +8,10 @@ ARGS=$@
 Help() {
     echo -e "This program is a rm replacement for sloppy just like me"
     echo -e "\t It is still in its early days but for now we only have 2 options"
-    echo -e "\t\t -e: to empty the trash directory defined by ${THRASH_DIR}"
-    echo -e "\t\t -d: to delete any file older than 30days old from ${THRASH_DIR}"
+    echo -e "\t\t -h: Displays the current help message"
+    echo -e "\t\t -d: Moves the files passed as argument to ${THRASH_DIR}"
+    echo -e "\t\t -e: Empties the trash directory defined by ${THRASH_DIR}"
+    echo -e "\t\t -c: Clears the file that are older than 30 days inside ${THRASH_DIR}"
 }
 
 Main() {
