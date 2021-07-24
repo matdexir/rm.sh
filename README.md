@@ -1,4 +1,4 @@
-# Why trash?
+# Why `trash`?
 
 :hammer: Obviously, while taking care of our system we inadvertedly deleted (:eyes: at you,`rm`) and lost the file forever.
 I do know the existence of the `-i` flag, however it does not protect against the dreaded :triangular_flag_on_post: `-rf`.
