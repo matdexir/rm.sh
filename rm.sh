@@ -4,11 +4,15 @@ TRASH_DIR="${TRASH_DIR:-$HOME/.local/trash}"
 [[ ! -d "${TRASH_DIR}" ]] && mkdir "${TRASH_DIR}"
 
 Help() {
-    echo -e "This program is a rm replacement for sloppy just like me"
-    echo -e "\t It is still in its early days but for now we only have 2 options"
-    echo -e "\t\t -h|--help: Displays the current help message"
-    echo -e "\t\t -e|--empty: Empties the trash directory defined by ${TRASH_DIR}"
-    echo -e "\t\t -c|--clear: Clears the file that are older than 30 days inside ${TRASH_DIR}"
+    echo "rm.sh 0.1.0 by @matdexir"
+    echo ""
+    echo "DESCRIPTION:"
+    echo -e "This program is a rm replacement for sloppy just like me. It is essentially a wrapper for rm and mv commands."
+    echo ""
+    echo "OPTIONS:"
+    echo -e "\t-h|--help:\tDisplays the current help message"
+    echo -e "\t-e|--empty:\tEmpties the trash directory defined by ${TRASH_DIR}"
+    echo -e "\t-c|--clear:\tClears the file that are older than 30 days inside ${TRASH_DIR}"
 }
 
 Main() {
