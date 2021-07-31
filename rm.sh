@@ -27,7 +27,7 @@ Empty() {
     echo "Emptying ${TRASH_DIR}..."
     files=$(ls ${TRASH_DIR})
     
-    if [ -z $files]; then
+    if [[ -z ${files} ]]; then
         echo "${TRASH_DIR} is empty"
         exit 1
     fi

@@ -18,3 +18,19 @@ OPTIONS:
 	-e|--empty:	Empties the trash directory defined by /home/matdexir/.local/trash
 	-c|--clear:	Clears the file that are older than 30 days inside /home/matdexir/.local/trash
 ```
+
+**Recommendation**:
+For convenience's sake, you could put this into your crontab.
+
+```
+# crontab format
+# * * * * *  command_to_execute
+# - - - - -
+# | | | | |
+# | | | | +- day of week (0 - 7) (where sunday is 0 and 7)
+# | | | +--- month (1 - 12)
+# | | +----- day (1 - 31)
+# | +------- hour (0 - 23)
+# +--------- minute (0 - 59)
+0 0 * * * /path/to/rm.sh -c
+```
