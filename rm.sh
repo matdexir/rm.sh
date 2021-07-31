@@ -17,13 +17,9 @@ Help() {
 
 Main() {
     for i in ${@}; do
-        if $i in $files; then
-            STAMP=$(date +%s)
-            NAME=$(basename ${i})
-            mv "${i}" "${TRASH_DIR}/${NAME}.${STAMP}"
-        else
-            echo "${i} does not exist"
-        fi
+        STAMP=$(date +%s)
+        NAME=$(basename ${i})
+        mv "${i}" "${TRASH_DIR}/${NAME}.${STAMP}"
     done
 }
 
