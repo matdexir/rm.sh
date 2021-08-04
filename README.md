@@ -7,7 +7,7 @@ So as another measure of security, I added an extra-layer security with `rm.sh`.
 After a few tweaks :wrench:, I came up with `rm.sh` and I firmly believe that it's a solid wrapper for rm.
 
 ## USAGE
-```bash
+```
 rm.sh 0.1.0 by @matdexir
 
 DESCRIPTION:
@@ -17,6 +17,7 @@ OPTIONS:
 	-h|--help:	Displays the current help message
 	-e|--empty:	Empties the trash directory defined by $TRASH_DIR
     -c|--clear:	Clears the file that are older than 30 days inside $TRASH_DIR
+
 ```
 
 **Recommendation**:
