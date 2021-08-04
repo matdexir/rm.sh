@@ -72,7 +72,6 @@ while (( "$#" )); do
             exit 1
             ;;
         -e|--empty) # Emptying TRASH_DIR
-            # echo "Emptying ${TRASH_DIR}..."
             Empty
             exit 1
             ;;
