@@ -63,6 +63,11 @@ Clear() {
     echo "Done."
 }
 
+List() {
+    # This feature should parse the Files inside $TRASH_DIR and return a pretty formatted list
+    echo "Feature Not Done Yet :(...."
+}
+
 FILES=""
 
 while (( "$#" )); do
@@ -77,6 +82,10 @@ while (( "$#" )); do
             ;;
         -c|--clear) # Delete any file older than the time period
             Clear
+            exit 1
+            ;;
+        -l|--list)
+            List
             exit 1
             ;;
         -*|--*=) # Unknown option
