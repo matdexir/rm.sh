@@ -16,8 +16,7 @@ This program is a rm replacement for sloppy just like me. It is essentially a wr
 OPTIONS:
 	-h|--help:	Displays the current help message
 	-e|--empty:	Empties the trash directory defined by $TRASH_DIR
-    -c|--clear:	Clears the file that are older than 30 days inside $TRASH_DIR
-
+	-c|--clear:	Clears the file that are older than 30 days inside $TRASH_DIR 
 ```
 
 **Recommendation**:
