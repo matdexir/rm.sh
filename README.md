@@ -36,4 +36,4 @@ For convenience's sake, you could put this into your crontab.
 ```
 
 ## TODO LIST
-[] Implement the list feature
+- [ ] Implement the list feature
