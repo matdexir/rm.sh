@@ -2,7 +2,8 @@
 
 TRASH_DIR="${TRASH_DIR:-$HOME/.local/trash}"
 [[ ! -d "${TRASH_DIR}" ]] && mkdir "${TRASH_DIR}"
-TRASH_INFO_DIR="${TRASH_DIR}/info"
+
+TRASH_INFO_DIR="${TRASH_INFO_DIR:-${TRASH_DIR}/info}"
 [[ ! -d "${TRASH_INFO_DIR}" ]] && mkdir "${TRASH_INFO_DIR}"
 
 Help() {
@@ -15,8 +16,23 @@ Help() {
     echo -e "\t-h|--help:\tDisplays the current help message"
     echo -e "\t-e|--empty:\tEmpties the trash directory defined by ${TRASH_DIR}"
     echo -e "\t-c|--clear:\tClears the file that are older than 30 days inside ${TRASH_DIR}"
+    echo -e "\t-l|--list:\tLists out all the file inside ${TRASH_DIR}"
 }
 
+# TODO:
+# 1. Reimplement how the file are save on the system
+# 2. This feature should heavily rely on the TRASH_INFO_DIR
+# 3. What to save:
+#       - File former directory(Later I will implement Restore)
+#       - File last modification Date for 
+#       - Other useful metadata that is permission and so on
+SaveInfo() {
+    echo "Saving file info into ${TRASH_INFO_DIR}..."
+}
+
+# TODO:
+# 1. Save the files information with the function SaveInfo
+# 2. Hash the file out for basic privacy feature 
 Main() {
     for i in ${@}; do
         STAMP=$(date +%s)
