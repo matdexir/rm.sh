@@ -42,18 +42,16 @@ Clear() {
     echo "Clearing ${TRASH_DIR}..."
     files=$(ls ${TRASH_DIR})
     
-    if [ -z $files ]; then
+    if [[ -z $files ]]; then
         echo "${TRASH_DIR} is empty"
         exit 1
     fi
     
     for i in $files; do 
         f=$(echo "$i" |rev |cut -d "." -f1 |rev)
-        echo "$f and $i"
         DATE=$(date +%s)
         MONTH=60*60*24*30
         DIFF=$(expr $((${DATE}-${f})))
-        echo ${DIFF}
         if [[ ${DIFF} -gt ${MONTH} ]]; then
             rm -rf ${i}
         else
