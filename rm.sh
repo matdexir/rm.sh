@@ -69,15 +69,15 @@ while (( "$#" )); do
     case "$1" in
         -h|--help) # Display help message
             Help
-            exit 1
+            exit 0
             ;;
         -e|--empty) # Emptying TRASH_DIR
             Empty
-            exit 1
+            exit 0
             ;;
         -c|--clear) # Delete any file older than the time period
             Clear
-            exit 1
+            exit 0
             ;;
         -*|--*=) # Unknown option
             echo "Error: Unknown option" >&2
