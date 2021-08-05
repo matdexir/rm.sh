@@ -1,6 +1,6 @@
 # Why `rm.sh`?
 
-:hammer: Obviously, while taking care of our system we inadvertedly deleted (:eyes: at you,`rm`) and lost a very important file forever.
+:hammer: Obviously, while taking care of our system we inadvertently deleted (:eyes: at you,`rm`) and lost a very important file forever.
 I do know the existence of the `-i` flag, however it does not protect against the dreaded :triangular_flag_on_post: `-rf`.
 So as another measure of security, I added an extra-layer security with `rm.sh`. In the grand scheme, it temporarily moves the file to be deleted to a directory `TRASH_DIR`(can be set as env variable :recycle:) and the same file can, later on, be permanantly deleted or recovered.
 
