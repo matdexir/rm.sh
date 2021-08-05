@@ -2,6 +2,8 @@
 
 TRASH_DIR="${TRASH_DIR:-$HOME/.local/trash}"
 [[ ! -d "${TRASH_DIR}" ]] && mkdir "${TRASH_DIR}"
+TRASH_INFO_DIR="${TRASH_DIR}/info"
+[[ ! -d "${TRASH_INFO_DIR}" ]] && mkdir "${TRASH_INFO_DIR}"
 
 Help() {
     echo "rm.sh 0.1.0 by @matdexir"
@@ -42,22 +44,22 @@ Clear() {
     echo "Clearing ${TRASH_DIR}..."
     files=$(ls ${TRASH_DIR})
     
-    if [ -z $files ]; then
+    if [[ -z ${files} ]]; then
         echo "${TRASH_DIR} is empty"
         exit 1
     fi
     
-    for i in $files; do 
-        f=$(echo "$i" |rev |cut -d "." -f1 |rev)
-        echo "$f and $i"
-        DATE=$(date +%s)
-        MONTH=60*60*24*30
-        DIFF=$(expr $((${DATE}-${f})))
-        echo ${DIFF}
-        if [[ ${DIFF} -gt ${MONTH} ]]; then
-            rm -rf ${i}
-        else
-            echo "Not deleting ${i}"
+    for i in ${files}; do 
+        if [[ ! $i == "info" ]]; then
+            f=$(echo "${i}" |rev |cut -d "." -f1 |rev)
+            DATE=$(date +%s)
+            MONTH=60*60*24*30
+            DIFF=$(expr $((${DATE}-${f})))
+            if [[ ${DIFF} -gt ${MONTH} ]]; then
+                rm -rf ${i}
+            else
+                echo "Not deleting ${i}"
+            fi
         fi
     done
     echo "Done."
@@ -66,6 +68,21 @@ Clear() {
 List() {
     # This feature should parse the Files inside $TRASH_DIR and return a pretty formatted list
     echo "Feature Not Done Yet :(...."
+    files=$(ls ${TRASH_DIR})
+
+    if [[ -z $files ]]; then
+        echo "No files to show"
+        exit 1
+    fi
+
+    for i in $files; do
+        if [[ ! $i == "info" ]]; then
+            f=$(echo "$i" |rev |cut -d "." -f1 |rev)
+            filedate=$(date -d @${f})
+            echo $filedate $i
+        fi
+
+    done
 }
 
 FILES=""
