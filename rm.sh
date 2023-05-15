@@ -36,14 +36,14 @@ SaveInfo() {
 Main() {
     for i in ${@}; do
         STAMP=$(date +%s)
-        NAME=$(basename ${i})
+        NAME=$(basename "${i}")
         mv "${i}" "${TRASH_DIR}/${NAME}.${STAMP}"
     done
 }
 
 Empty() {
     echo "Emptying ${TRASH_DIR}..."
-    files=$(ls ${TRASH_DIR})
+    files=$(ls "${TRASH_DIR}")
     
     if [[ -z ${files} ]]; then
         echo "${TRASH_DIR} is empty"
@@ -58,7 +58,7 @@ Empty() {
 
 Clear() {
     echo "Clearing ${TRASH_DIR}..."
-    files=$(ls ${TRASH_DIR})
+    files=$(ls "${TRASH_DIR}")
     
     if [[ -z ${files} ]]; then
         echo "${TRASH_DIR} is empty"
@@ -72,7 +72,7 @@ Clear() {
             MONTH=60*60*24*30
             DIFF=$(expr $((${DATE}-${f})))
             if [[ ${DIFF} -gt ${MONTH} ]]; then
-                rm -rf ${i}
+                rm -rf "${i}"
             else
                 echo "Not deleting ${i}"
             fi
@@ -84,7 +84,7 @@ Clear() {
 List() {
     # This feature should parse the Files inside $TRASH_DIR and return a pretty formatted list
     echo "Feature Not Done Yet :(...."
-    files=$(ls ${TRASH_DIR})
+    files=$(ls "${TRASH_DIR}")
 
     if [[ -z $files ]]; then
         echo "No files to show"
@@ -94,8 +94,8 @@ List() {
     for i in $files; do
         if [[ ! $i == "info" ]]; then
             f=$(echo "$i" |rev |cut -d "." -f1 |rev)
-            filedate=$(date -d @${f})
-            echo $filedate $i
+            filedate=$(date -d @"${f}")
+            echo "$filedate" "$i"
         fi
 
     done
