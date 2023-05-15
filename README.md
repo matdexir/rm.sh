@@ -35,3 +35,6 @@ For convenience's sake, you could put this into your crontab.
 # +--------- minute (0 - 59)
 0 0 * * * /path/to/rm.sh -c
 ```
+
+## TODO LIST
+- [ ] Implement the list feature
