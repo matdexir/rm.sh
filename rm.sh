@@ -59,12 +59,13 @@ Empty() {
 Clear() {
     echo "Clearing ${TRASH_DIR}..."
     files=$(ls "${TRASH_DIR}")
-    
+
     if [[ -z ${files} ]]; then
         echo "${TRASH_DIR} is empty"
         exit 1
     fi
     
+
     for i in ${files}; do 
         if [[ ! $i == "info" ]]; then
             f=$(echo "${i}" |rev |cut -d "." -f1 |rev)
@@ -107,15 +108,15 @@ while (( "$#" )); do
     case "$1" in
         -h|--help) # Display help message
             Help
-            exit 1
+            exit 0
             ;;
         -e|--empty) # Emptying TRASH_DIR
             Empty
-            exit 1
+            exit 0
             ;;
         -c|--clear) # Delete any file older than the time period
             Clear
-            exit 1
+            exit 0
             ;;
         -l|--list)
             List

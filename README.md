@@ -1,13 +1,14 @@
 # Why `rm.sh`?
 
-:hammer: Obviously, while taking care of our system we inadvertedly deleted (:eyes: at you,`rm`) and lost the file forever.
+:hammer: Obviously, while taking care of our system we inadvertently deleted (:eyes: at you,`rm`) and lost a very important file forever.
 I do know the existence of the `-i` flag, however it does not protect against the dreaded :triangular_flag_on_post: `-rf`.
 So as another measure of security, I added an extra-layer security with `rm.sh`. In the grand scheme, it temporarily moves the file to be deleted to a directory `TRASH_DIR`(can be set as env variable :recycle:) and the same file can, later on, be permanantly deleted or recovered.
 
 After a few tweaks :wrench:, I came up with `rm.sh` and I firmly believe that it's a solid wrapper for rm.
 
 ## USAGE
-```bash
+
+```
 rm.sh 0.1.0 by @matdexir
 
 DESCRIPTION:
@@ -16,7 +17,7 @@ This program is a rm replacement for sloppy just like me. It is essentially a wr
 OPTIONS:
 	-h|--help:	Displays the current help message
 	-e|--empty:	Empties the trash directory defined by $TRASH_DIR
-	-c|--clear:	Clears the file that are older than 30 days inside $TRASH_DIR 
+	-c|--clear:	Clears the files that are older than 30 days inside $TRASH_DIR
 ```
 
 **Recommendation**:
